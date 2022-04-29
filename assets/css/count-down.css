@@ -1,0 +1,243 @@
+*{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+html,
+body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+body{
+    position: relative;
+    min-height: 100vh;
+    overflow-y: auto;
+    background-color: #FFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+/* main page */
+.countdown{
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+    flex-direction: column;
+    background-image: url(../images/countdown/coundown-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.main-container{
+    width: 100%;
+    position: relative;
+}
+.hand-left{
+    width: 100%;
+    max-width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+
+}
+
+.hand-right{
+    width: 100%;
+    max-width: 20%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+.hand-left img,
+.hand-right img{
+    max-height: 80vh;
+}
+.center-content{
+    width: 55%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+.countdown-container{
+    position: relative;
+    width: 100%;
+    display: flex;
+    margin-top: auto;
+}
+.countdown-container .countdown-text{
+   margin: auto;
+   width: 100%;
+   height: 100%;
+}
+
+.thankYou-text,
+.con-of-count{
+    max-width: 100%;
+}
+.thankYou-text{
+    filter: invert(1);
+}
+
+.con-of-count >div{
+    margin: 1.3rem auto;
+}
+.con-of-count .wrapper {
+    position: relative;
+    margin: 10px 15px;
+    max-width: 165px;
+}
+.con-of-count .wrapper img{
+    width: 100%;
+}
+
+.con-of-count .wrapper .number {
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: #e0c6e1;
+    font-size: calc(4vw + 13px);
+    font-family: 'GothamRnd-Book';
+}
+.con-of-count .text {
+	font-family: 'GothamRnd-Medium';
+	color: #004a9a;
+	font-size: 20px;
+	text-align: center;
+    text-transform: uppercase;
+}
+.countdown .btn{
+    margin: .5rem 0;
+    padding: 0;
+    box-shadow: none !important;
+    outline: none !important;
+    display: block;
+}
+.countdown .action-btns img{
+    width: 100%;
+}
+.countdown .frame-link{
+    width: 35vw;
+    padding: 0;
+    margin-bottom: auto;
+    box-shadow: none !important;
+    outline: none;
+    max-width: 320px;
+    margin-top: auto;
+}
+.countdown .join-btn{
+    max-width: 380px;
+    box-shadow: none !important;
+    outline: none;
+    z-index: 2;
+    width: 35vw;
+}
+.countdown .join-btn img{
+    width: 100%;
+}
+
+
+
+
+@media (max-width:992px) {
+    .countdown .join-btn{
+        width: 60%;
+        max-width: 250px;
+        margin-bottom: 1rem;
+     }
+     .countdown .frame-link{
+             width: 50%;
+            max-width: 180px;
+     }
+    .countdown .action-btns .btn{
+        padding: 0;
+        margin: .3rem 0;
+    }
+    .con-of-count .text{
+        font-size: calc(1vw + 5px);
+    }
+    .con-of-count .wrapper .number{
+        font-size: calc(2vw + 10px);   
+    }
+    .con-of-count .wrapper{
+        margin: 5px;
+    }
+    
+}
+@media (max-width:768px) and (orientation:portrait){
+    .center-content{
+        width: 70%;
+        position: relative;
+        z-index: 1;
+        margin: auto;
+        height: 100%;
+    }
+    .hand-left{
+        position: absolute;
+        left: 0;
+        top: 0;
+        max-width: 20%;
+        height: 100%;
+    }
+    .hand-right{
+        position: absolute;
+        right: 0;
+        top: 0;
+        max-width: 20%;
+        height: 100%;
+    }
+    .con-of-count .wrapper .number{
+        font-size: calc(4vw + 12px);
+    }
+    .con-of-count .text{
+        font-size: calc(1vw + 5px);
+    }
+}
+
+
+
+@media (max-width:600px) and (orientation:portrait){
+    
+    .countdown .action-btns .btn{
+        margin: .3rem 0;
+        padding: 0;
+    }
+     .countdown-container{
+        margin-top: auto;
+        overflow: visible;
+    }
+
+    
+}
+
+
+@media (max-width:400px) and (orientation:portrait){
+    .center-content{
+        width: 70%;
+    }
+    .hand-left{
+        max-width: 25%;
+    }
+    .hand-right{
+        max-width: 25%;
+        
+    }
+    .con-of-count .wrapper .number {
+        font-size: calc(2vw + 12px);
+    }
+    .con-of-count .wrapper{
+        margin: 0 5px;
+    }
+}

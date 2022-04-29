@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/fonts.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/loading.css">
+    <!--    <meta name="csrf-token" content="{{ csrf_token() }}">-->
+
+    <style>
+        /*.active-button{*/
+        /*    filter: grayscale(10%);;*/
+        /*}*/
+        .active-button:focus {
+            filter: grayscale(90%);
+            ;
+        }
+    </style>
+    <title>GSK</title>
+</head>
+
+<body class="main-page">
+
+    <div class="main-container d-flex justify-content-center flex-grow-1">
+
+        <div class="center-content">
+            <div class="canvas-container">
+                <canvas id="canvas" class="frame-canvas" width="764.5" height="882.3" ></canvas>
+                <img src="assets/images/frame.png"  style="pointer-events: none; touch-action: none"
+                    class="img-fluid canvasimg" alt="">
+            </div>
+            <div class="action-btns">
+                <strong style="cursor: pointer" onclick="adjustRange(false)">-</strong>
+                <input type="range" class="form-range image-btn" min="0" max="100" disabled step="1" id="zoom-range">
+                <strong style="cursor: pointer" onclick="adjustRange(true)">+</strong>
+
+            </div>
+            <button class="btn edit-btn image-btn" id="edit" disabled>
+                <img src="assets/images/adjust-btn_o.png" class="img-fluid " alt="">
+
+            </button>
+
+            <div class="action-btns">
+                <button class="btn access-cam-btn image-btn" >
+                    <img src="assets/images/btn.png" class="img-fluid" alt="">
+                </button>
+                <button class="btn gallery-btn image-btn">
+                    <img src="assets/images/btn2.png" class="img-fluid" alt="">
+                </button>
+            </div>
+            <button class="btn save-btn image-btn" id="save" disabled>
+                <img src="assets/images/save.png" class="img-fluid" alt="">
+            </button>
+
+        </div>
+
+
+    </div>
+
+    <input type="file" name="camera_input" accept="image/*" style="display: none" id="camera-input"
+        class="image-uploader image-btn" capture="user">
+    <input type="file" name="gallery_input" accept="image/*" style="display: none" id="gallery-input"
+        class="image-uploader image-btn">
+    <img src="assets/images/frame.png" id="frame" width="" height="" style="display: none">
+    <img src="assets/images/frame-map.png" id="map" width="" height="" style="display: none">
+
+    <!-- thank you -->
+    <div class="thankyou">
+        <div class="container">
+            <img src="assets/images/thank-you.svg" alt="">
+        </div>
+    </div>
+
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+    <!-- scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/ajax.js"></script>
+    <script src="assets/js/photo-frame.js"></script>
+</body>
+
+</html>
