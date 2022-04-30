@@ -133,7 +133,7 @@ body {
 }
 
 .center-content {
-    width: 41%;
+    width: 100%;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -365,7 +365,7 @@ how to remove the virtical space around the range input in IE*/
 
 @media (max-width:1199px) {
     .center-content {
-        width: 80%;
+        /*width: 80%;*/
     }
 }
 
@@ -402,7 +402,7 @@ how to remove the virtical space around the range input in IE*/
 
 @media (max-width:768px) and (orientation:portrait) {
     .center-content {
-        width: 90%;
+        /*width: 90%;*/
         position: relative;
         z-index: 1;
         margin: auto;
@@ -471,7 +471,7 @@ how to remove the virtical space around the range input in IE*/
 
 @media (max-width:400px) and (orientation:portrait) {
     .center-content {
-        width: 90%
+        /*width: 90%*/
     }
 
     .hand-left {
