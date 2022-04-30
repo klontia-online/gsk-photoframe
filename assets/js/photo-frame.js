@@ -90,6 +90,7 @@ function readURL(input) {
             image.onload = function () {
                 userImage = image
                 createFirstCanvas();
+                createCanvas()
                 $("#edit").attr("disabled", false).addClass('active-button');
                 $("#zoom-range").attr("disabled", false).val(50);
             }
@@ -105,18 +106,18 @@ function createFirstCanvas(){
     let ctx = canvas.getContext("2d");
     let imageWidth = userImage.width ;
     let imageHeight = userImage.height ;
-    maxX = imageWidth > InlineWidth ?  imageWidth - InlineWidth : 0 ;
-    maxY = imageHeight > InlineHeight ? imageHeight -InlineHeight : 0;
-    if (userImage.width < InlineWidth)
-    {
-            imageWidth = InlineWidth ;
-    }
-    if (userImage.height < InlineHeight)
-    {
-        imageHeight = InlineHeight ;
-    }
+    // maxX = imageWidth > InlineWidth ?  imageWidth - InlineWidth : 0 ;
+    // maxY = imageHeight > InlineHeight ? imageHeight -InlineHeight : 0;
+    // if (userImage.width < InlineWidth)
+    // {
+    //         imageWidth = InlineWidth ;
+    // }
+    // if (userImage.height < InlineHeight)
+    // {
+    //     imageHeight = InlineHeight ;
+    // }
     ctx.clearRect(0,0,OutlineWidth,OutlineHeight)
-    ctx.drawImage(userImage, StartX, StartY,imageWidth,imageHeight);
+    ctx.drawImage(userImage, StartX, StartY,InlineWidth,InlineHeight);
 }
 
 function reDrawCanvas()
@@ -128,7 +129,9 @@ function reDrawCanvas()
     let widthTargeted =  InlineWidth / zoomRatio <= userImage.width ?   InlineWidth / zoomRatio : userImage.width
     let heightTargeted = InlineHeight / zoomRatio <= userImage.height ?  InlineHeight / zoomRatio : userImage.height
     ctx.clearRect(0,0,OutlineWidth,OutlineHeight)
-    ctx.drawImage(userImage, currentStartX, currentStartY,widthTargeted  ,heightTargeted  ,StartX,StartY,InlineWidth,InlineHeight);
+    ctx.drawImage(userImage, StartX, StartX, 941, 1261);
+
+    // ctx.drawImage(userImage, currentStartX, currentStartY,widthTargeted  ,heightTargeted  ,StartX,StartY,InlineWidth,InlineHeight);
 }
 
 function createCanvas() {
@@ -137,17 +140,17 @@ function createCanvas() {
     let map = $("#map")[0];
     let ctx = canvas.getContext("2d");
     ctx.drawImage(frame, 0, 0, OutlineWidth, OutlineHeight);
-    ctx.drawImage(map, 40, 538, 680, 256.192);
+    ctx.drawImage(map, 0, 0, OutlineWidth, OutlineHeight);
     $(".canvasimg").css("display", "none");
 }
 
 function submitPhoto()
 {
-    loading();
-    let base64 = $("#canvas")[0].toDataURL();
-    download(base64);
-    $('.image-btn').attr('disabled', true)
-    unLoading();
+    // loading();
+    // let base64 = $("#canvas")[0].toDataURL();
+    // download(base64);
+    // $('.image-btn').attr('disabled', true)
+    // unLoading();
 }
 
 function download(base64) {
