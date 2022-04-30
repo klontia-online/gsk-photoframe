@@ -146,11 +146,11 @@ function createCanvas() {
 
 function submitPhoto()
 {
-    // loading();
-    // let base64 = $("#canvas")[0].toDataURL();
-    // download(base64);
-    // $('.image-btn').attr('disabled', true)
-    // unLoading();
+    loading();
+    let base64 = $("#canvas")[0].toDataURL();
+    download(base64);
+    $('.image-btn').attr('disabled', true)
+    unLoading();
 }
 
 function download(base64) {
